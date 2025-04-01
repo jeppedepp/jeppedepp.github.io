@@ -5,43 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Företagsnamn - Elektrisk Design & PLC-programmering</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background: #0073e6; color: white; padding: 20px; text-align: center; }
-        nav { background: #005bb5; padding: 10px; text-align: center; }
-        nav a { color: white; text-decoration: none; padding: 10px; }
-        section { padding: 20px; max-width: 800px; margin: auto; }
-        footer { background: #333; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: #fff;
+            padding: 10px 20px;
+            transition: all 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header img {
+            max-width: 200px;
+            transition: all 0.5s;
+        }
+        .content {
+            margin-top: 100vh;
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .scrolled header {
+            justify-content: flex-start;
+            padding: 10px;
+        }
+        .scrolled header img {
+            max-width: 100px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Företagsnamn</h1>
-        <p>Specialister på Elektrisk Design & PLC-programmering</p>
+        <img src="logo.png" alt="Företagslogotyp">
     </header>
-    <nav>
-        <a href="#om">Om oss</a>
-        <a href="#tjanster">Tjänster</a>
-        <a href="#kontakt">Kontakt</a>
-    </nav>
-    <section id="om">
+    <div class="content">
         <h2>Om oss</h2>
         <p>Vi erbjuder expertis inom elektrisk design och PLC-programmering med fokus på kvalitet och innovation.</p>
-    </section>
-    <section id="tjanster">
         <h2>Våra tjänster</h2>
         <ul>
             <li>Elektrisk design</li>
             <li>PLC-programmering</li>
             <li>Automationslösningar</li>
         </ul>
-    </section>
-    <section id="kontakt">
         <h2>Kontakt</h2>
         <p>Email: info@dittforetag.se</p>
         <p>Telefon: 012-3456789</p>
-    </section>
-    <footer>
-        <p>&copy; 2025 Företagsnamn. Alla rättigheter förbehållna.</p>
-    </footer>
+    </div>
+    <script>
+        window.addEventListener("scroll", function() {
+            document.body.classList.toggle("scrolled", window.scrollY > 50);
+        });
+    </script>
 </body>
 </html>
